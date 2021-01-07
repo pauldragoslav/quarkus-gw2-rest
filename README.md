@@ -1,4 +1,4 @@
-# Qurkus Guild Wars 2 REST
+# Quarkus Guild Wars 2 REST
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit: https://quarkus.io/
 

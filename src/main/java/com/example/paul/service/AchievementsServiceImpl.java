@@ -6,12 +6,8 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 
-import static java.util.Objects.*;
 import static java.util.stream.Collectors.toList;
 
 @ApplicationScoped
@@ -33,17 +29,6 @@ public class AchievementsServiceImpl implements AchievementsService {
         return characterAchievements.stream()
                 .filter(achievement -> !achievement.done)
                 .sorted(new AchievementCompletionComparator().reversed())
-//                .sorted(Comparator.comparing(AchievementsServiceImpl::completionPercentage).reversed())
                 .collect(toList());
-    }
-
-    private static Integer completionPercentage(Achievement achievement) {
-//        if (isNull(achievement.current) || isNull(achievement.max)) {
-//            return Integer.MIN_VALUE;
-//        }
-//        if (achievement.current == 0) {
-//            return Integer.MIN_VALUE + 1;
-//        }
-        return (achievement.current / achievement.max) * 100;
     }
 }
